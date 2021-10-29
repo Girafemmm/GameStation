@@ -1,0 +1,12 @@
+
+.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		bottom: 10px;
+}
+.specials-card{
+	border: #333333;
+}
+

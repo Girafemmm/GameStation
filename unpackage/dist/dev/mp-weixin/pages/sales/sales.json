@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "u-card": "/uview-ui/components/u-card/u-card",
+    "u-tabbar": "/uview-ui/components/u-tabbar/u-tabbar"
+  }
+}

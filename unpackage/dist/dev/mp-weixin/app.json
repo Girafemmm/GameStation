@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/sales/sales",
+    "pages/search/search",
+    "pages/dataAnalysis/dataAnalysis"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/sales/sales"
+      },
+      {
+        "pagePath": "pages/search/search"
+      },
+      {
+        "pagePath": "pages/dataAnalysis/dataAnalysis"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,1 @@
+<view><view class="_h2">此功能暂未开放</view><u-tabbar vue-id="4d5db800-1" list="{{tabbar}}" mid-button="{{true}}" bind:__l="__l"></u-tabbar></view>
