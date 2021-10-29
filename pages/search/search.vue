@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<h2>此功能暂未开放</h2>
-		<u-tabbar :list="tabbar" :mid-button="true"></u-tabbar>
+		<u-tabbar :list="tabbar" :mid-button="false"></u-tabbar>
 	</view>
 </template>
 

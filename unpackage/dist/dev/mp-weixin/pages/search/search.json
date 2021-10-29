@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "uni-app",
+  "navigationBarTitleText": "GameStation-搜索",
   "usingComponents": {
     "u-tabbar": "/uview-ui/components/u-tabbar/u-tabbar"
   }

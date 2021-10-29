@@ -5,8 +5,54 @@
 		align-items: center;
 		justify-content: center;
 		bottom: 10px;
+		background-color: #e6ebf4;
 }
 .specials-card{
-	border: #333333;
+	/* border-style: solid;
+	border-width: 1px;
+	border-color: #333333; */
+	border-radius: 15px;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.specials-card-img{
+	width: 100%;
+	border-top-right-radius:15px;
+	border-top-left-radius:15px;
+	/* width: 215px;
+	height: 460px; */
+}
+.specials-card-title{
+	word-break: normal;
+}
+.specials-card-discount{
+}
+.specials-card-price{
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	padding-left: 5px;
+	text-align: center;
+}
+.specials-card-discount-percent{
+	display: inline-block;
+	background-color: #71C671;
+	color: white;
+	height: 100%;
+	font-size: 27px;
+	padding: 4px;
+	border-bottom-left-radius:15px;
+	border-top-right-radius:15px;
+}
+.specials-card-originprice{
+	color: #55575b;
+	display: block;
+	text-align:right;
+	text-decoration:line-through;
+}
+.specials-card-finalprice{
+	font-weight: bold;
+	display: block;
+	text-align:right;
 }
 

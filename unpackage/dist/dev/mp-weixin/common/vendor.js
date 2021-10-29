@@ -914,7 +914,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"GameStation","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"GameStation","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7548,7 +7548,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"GameStation","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"GameStation","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7569,14 +7569,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"GameStation","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"GameStation","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"GameStation","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"GameStation","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7662,7 +7662,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"GameStation","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"GameStation","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8528,9 +8528,9 @@ function walkJsonObj(jsonObj, walk) {
 
 /***/ }),
 /* 5 */
-/*!************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/pages.json ***!
-  \************************************************************************/
+/*!*****************************************!*\
+  !*** E:/project/GameStation/pages.json ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -8671,9 +8671,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 12 */
-/*!****************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/store/index.js ***!
-  \****************************************************************************/
+/*!*********************************************!*\
+  !*** E:/project/GameStation/store/index.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8687,21 +8687,21 @@ var store = new _vuex.default.Store({
       iconPath: "/static/icon/tags-inactive.png",
       selectedIconPath: "/static/icon/tags.png",
       text: '今日折扣',
-      midButton: true,
+      // midButton: true,
       pagePath: "/pages/sales/sales" },
 
     {
       iconPath: "/static/icon/search-inactive.png",
       selectedIconPath: "/static/icon/search.png",
       text: '搜索',
-      midButton: true,
+      // midButton: true,
       pagePath: "/pages/search/search" },
 
     {
       iconPath: "/static/icon/sever-inactive.png",
       selectedIconPath: "/static/icon/sever.png",
       text: '在线数据',
-      midButton: true,
+      // midButton: true,
       pagePath: "/pages/dataAnalysis/dataAnalysis" }] },
 
 
@@ -9969,9 +9969,9 @@ module.exports = index_cjs;
 
 /***/ }),
 /* 14 */
-/*!*******************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/index.js ***!
-  \*******************************************************************************/
+/*!************************************************!*\
+  !*** E:/project/GameStation/uview-ui/index.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10120,9 +10120,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 15 */
-/*!******************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/mixin/mixin.js ***!
-  \******************************************************************************************/
+/*!***********************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/mixin/mixin.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10193,9 +10193,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 16 */
-/*!********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/request/index.js ***!
-  \********************************************************************************************/
+/*!*************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/request/index.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10373,9 +10373,9 @@ new Request();exports.default = _default;
 
 /***/ }),
 /* 17 */
-/*!*************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/deepMerge.js ***!
-  \*************************************************************************************************/
+/*!******************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/deepMerge.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10413,9 +10413,9 @@ deepMerge;exports.default = _default;
 
 /***/ }),
 /* 18 */
-/*!*************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/deepClone.js ***!
-  \*************************************************************************************************/
+/*!******************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/deepClone.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10446,9 +10446,9 @@ deepClone;exports.default = _default;
 
 /***/ }),
 /* 19 */
-/*!********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/test.js ***!
-  \********************************************************************************************/
+/*!*************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/test.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10687,9 +10687,9 @@ function code(value) {var len = arguments.length > 1 && arguments[1] !== undefin
 
 /***/ }),
 /* 20 */
-/*!***************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/queryParams.js ***!
-  \***************************************************************************************************/
+/*!********************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/queryParams.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10755,9 +10755,9 @@ queryParams;exports.default = _default;
 
 /***/ }),
 /* 21 */
-/*!*********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/route.js ***!
-  \*********************************************************************************************/
+/*!**************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/route.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11676,9 +11676,9 @@ if (hadRuntime) {
 
 /***/ }),
 /* 25 */
-/*!**************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/timeFormat.js ***!
-  \**************************************************************************************************/
+/*!*******************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/timeFormat.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11737,9 +11737,9 @@ timeFormat;exports.default = _default;
 
 /***/ }),
 /* 26 */
-/*!************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/timeFrom.js ***!
-  \************************************************************************************************/
+/*!*****************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/timeFrom.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11794,9 +11794,9 @@ timeFrom;exports.default = _default;
 
 /***/ }),
 /* 27 */
-/*!*****************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/colorGradient.js ***!
-  \*****************************************************************************************************/
+/*!**********************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/colorGradient.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11937,9 +11937,9 @@ function colorToRgba(color) {var alpha = arguments.length > 1 && arguments[1] !=
 
 /***/ }),
 /* 28 */
-/*!********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/guid.js ***!
-  \********************************************************************************************/
+/*!*************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/guid.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11988,9 +11988,9 @@ guid;exports.default = _default;
 
 /***/ }),
 /* 29 */
-/*!*********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/color.js ***!
-  \*********************************************************************************************/
+/*!**************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/color.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12035,9 +12035,9 @@ color;exports.default = _default;
 
 /***/ }),
 /* 30 */
-/*!*************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/type2icon.js ***!
-  \*************************************************************************************************/
+/*!******************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/type2icon.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12080,9 +12080,9 @@ type2icon;exports.default = _default;
 
 /***/ }),
 /* 31 */
-/*!***************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/randomArray.js ***!
-  \***************************************************************************************************/
+/*!********************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/randomArray.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12097,9 +12097,9 @@ randomArray;exports.default = _default;
 
 /***/ }),
 /* 32 */
-/*!***********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/addUnit.js ***!
-  \***********************************************************************************************/
+/*!****************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/addUnit.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12115,9 +12115,9 @@ function addUnit() {var value = arguments.length > 0 && arguments[0] !== undefin
 
 /***/ }),
 /* 33 */
-/*!**********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/random.js ***!
-  \**********************************************************************************************/
+/*!***************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/random.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12135,9 +12135,9 @@ random;exports.default = _default;
 
 /***/ }),
 /* 34 */
-/*!********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/trim.js ***!
-  \********************************************************************************************/
+/*!*************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/trim.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12160,9 +12160,9 @@ trim;exports.default = _default;
 
 /***/ }),
 /* 35 */
-/*!*********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/toast.js ***!
-  \*********************************************************************************************/
+/*!**************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/toast.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12180,9 +12180,9 @@ toast;exports.default = _default;
 
 /***/ }),
 /* 36 */
-/*!*************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/getParent.js ***!
-  \*************************************************************************************************/
+/*!******************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/getParent.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12237,9 +12237,9 @@ function getParent(name, keys) {
 
 /***/ }),
 /* 37 */
-/*!***********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/$parent.js ***!
-  \***********************************************************************************************/
+/*!****************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/$parent.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12265,9 +12265,9 @@ function $parent() {var name = arguments.length > 0 && arguments[0] !== undefine
 
 /***/ }),
 /* 38 */
-/*!*******************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/sys.js ***!
-  \*******************************************************************************************/
+/*!************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/sys.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12283,9 +12283,9 @@ function sys() {
 
 /***/ }),
 /* 39 */
-/*!************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/debounce.js ***!
-  \************************************************************************************************/
+/*!*****************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/debounce.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12322,9 +12322,9 @@ debounce;exports.default = _default;
 
 /***/ }),
 /* 40 */
-/*!************************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/function/throttle.js ***!
-  \************************************************************************************************/
+/*!*****************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/function/throttle.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12364,9 +12364,9 @@ throttle;exports.default = _default;
 
 /***/ }),
 /* 41 */
-/*!********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/config/config.js ***!
-  \********************************************************************************************/
+/*!*************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/config/config.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12387,9 +12387,9 @@ var version = '1.8.4';var _default =
 
 /***/ }),
 /* 42 */
-/*!********************************************************************************************!*\
-  !*** C:/Users/HUANG/Documents/HBuilderProjects/GameStation/uview-ui/libs/config/zIndex.js ***!
-  \********************************************************************************************/
+/*!*************************************************************!*\
+  !*** E:/project/GameStation/uview-ui/libs/config/zIndex.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

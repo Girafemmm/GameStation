@@ -7,21 +7,21 @@ const store = new Vuex.Store({
 					iconPath: "/static/icon/tags-inactive.png",
 					selectedIconPath: "/static/icon/tags.png",
 					text: '今日折扣',
-					midButton: true,
+					// midButton: true,
 					pagePath: "/pages/sales/sales"
 				},
 				{
 					iconPath: "/static/icon/search-inactive.png",
 					selectedIconPath: "/static/icon/search.png",
 					text: '搜索',
-					midButton: true,
+					// midButton: true,
 					pagePath: "/pages/search/search"
 				},
 				{
 					iconPath: "/static/icon/sever-inactive.png",
 					selectedIconPath: "/static/icon/sever.png",
 					text: '在线数据',
-					midButton: true,
+					// midButton: true,
 					pagePath: "/pages/dataAnalysis/dataAnalysis"
 				},
 			],

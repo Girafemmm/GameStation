@@ -6,19 +6,19 @@
 		{
 			"path": "pages/sales/sales",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "GameStation-今日折扣"
 			}
 		},
 		{
 			"path": "pages/search/search",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "GameStation-搜索"
 			}
 		},
 		{
 			"path": "pages/dataAnalysis/dataAnalysis",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "GameStation-在线数据"
 			}
 		}
 	],

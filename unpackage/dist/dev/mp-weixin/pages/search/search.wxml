@@ -1,1 +1,1 @@
-<view><view class="_h2">此功能暂未开放</view><u-tabbar vue-id="50cad900-1" list="{{tabbar}}" mid-button="{{true}}" bind:__l="__l"></u-tabbar></view>
+<view><view class="_h2">此功能暂未开放</view><u-tabbar vue-id="50cad900-1" list="{{tabbar}}" mid-button="{{false}}" bind:__l="__l"></u-tabbar></view>
