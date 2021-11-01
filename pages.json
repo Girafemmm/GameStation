@@ -20,6 +20,9 @@
 			"style": {
 				"navigationBarTitleText": "GameStation-在线数据"
 			}
+		},
+		{
+			"path": "pages/gameDetails/gameDetails"
 		}
 	],
 	"globalStyle": {

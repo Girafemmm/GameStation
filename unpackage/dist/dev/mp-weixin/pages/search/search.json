@@ -1,6 +1,8 @@
 {
   "navigationBarTitleText": "GameStation-搜索",
   "usingComponents": {
+    "u-search": "/uview-ui/components/u-search/u-search",
+    "u-card": "/uview-ui/components/u-card/u-card",
     "u-tabbar": "/uview-ui/components/u-tabbar/u-tabbar"
   }
 }
