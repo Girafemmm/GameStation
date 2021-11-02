@@ -1,7 +1,8 @@
 <template>
 	<view>
-		<!-- <web-view src="https://steamdb.info/embed/?appid=753" height="100" style="border:0;overflow:hidden;width:100%" loading="lazy"></web-view> -->
-		
+		<view>
+			<h2>此功能暂未开放</h2>
+		</view>
 		<u-tabbar :list="tabbar" :mid-button="false"></u-tabbar>
 	</view>
 </template>

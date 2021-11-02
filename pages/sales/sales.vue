@@ -1,9 +1,9 @@
 <template>
 	<view class="content">
-		<u-card title="特别推荐" :sub-title="subTitle" foot-border-top="true" head-border-bottom="true">
+		<u-card class="specials" title="特别推荐" :sub-title="subTitle" foot-border-top="true" head-border-bottom="true">
 				<view v-for="(item,index) in specials" class="" slot="body">
 					<view class="specials-card">
-						<image class="specials-card-img" :src="item.header_image" mode="widthFix"></image>
+						<image class="specials-card-img" :src="item.large_capsule_image" mode="widthFix"></image>
 						<view class="specials-card-title">{{item.name}}</view>
 						<view class="specials-card-discount">
 							<view class="specials-card-discount-percent">{{'-' + item.discount_percent + '%'}}</view>
@@ -73,6 +73,9 @@
 			bottom: 10px;
 			background-color: #e6ebf4;
 		}
+	.specials{
+			width: 100%;
+		}
 	.specials-card{
 		/* border-style: solid;
 		border-width: 1px;
@@ -90,6 +93,8 @@
 	}
 	.specials-card-title{
 		word-break: normal;
+		padding-left: 5px;
+		font-weight: bold;
 	}
 	.specials-card-discount{
 		

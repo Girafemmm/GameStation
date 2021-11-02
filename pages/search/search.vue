@@ -1,11 +1,20 @@
 <template>
 	<view class="content">
 		<view>
-			<u-search @search="gameSearch()" @custom="gameSearch()" placeholder="请输入完整的游戏名称" v-model="keyword" :show-action="true" action-text="搜索" :animation="true"></u-search>
+			<u-search @search="gameSearch()" @custom="gameSearch()" placeholder="请输入游戏名称" v-model="keyword" :show-action="true" action-text="搜索" :animation="true"></u-search>
 		</view>
-		<u-card v-for="(item,index) in searchresult" :key="item.id" :title="item.title" @click="gameDetails(index)">
-			
-		</u-card>
+		<!-- <u-card v-for="(item,index) in searchresult" :key="item.appId" :title="item.title" @click="gameDetails(index)">
+			<view slot="body">
+				<image :src="item.imgUrl" mode="widthFix"></image>
+			</view>
+			<view slot="foot">
+				<view>{{item.released}}</view>
+			</view>
+		</u-card> -->
+		<uni-list v-for="(item,index) in searchresult" :key="item.appId">
+			<uni-list-item clickable @click="gameDetails(item.appId)" :title="item.title" :note="item.released">
+			</uni-list-item>
+		</uni-list>
 		<u-tabbar :list="tabbar" :mid-button="false"></u-tabbar>
 	</view>
 </template>
@@ -16,11 +25,12 @@
 			return {
 				title: 'Search',
 				tabbar: '',
-				keyword: ' ',
+				keyword: '',
 				apikey:'2b4db10647548c96d99c4a634d27a08845d2afa6',
 				searchresult:'',
 				searchresultshow:false,
-				plain:'',
+				id:'',
+				page:'1',
 			}
 		},
 		onLoad() {
@@ -33,27 +43,28 @@
 			gameSearch(){
 				console.log(this.keyword);
 				uni.request({
-					url:"https://api.isthereanydeal.com/v02/search/search",
+					url:`https://steam2.p.rapidapi.com/search/${this.keyword}/page/${this.page}`,
 					method:"GET",
-					data:{
-						key:this.apikey,
-						q:this.keyword,
-						strict:'1',
-						limit:'100'
+					header:{
+						'x-rapidapi-host': 'steam2.p.rapidapi.com',
+						'x-rapidapi-key': '7c7226b912mshaeb4467163fc24cp121efdjsn6e9e15bd83c6'
 					},
 					success: (res) => {
 					        console.log(res);
-							console.log(res.data.data.results);
-							this.searchresult = res.data.data.results;
+							console.log(res.data);
+							this.searchresult = res.data;
 					    }
 				})
 			},
+			searchClilk(){
+				this.page = '1'
+				this.gameSearch()
+			},
 			gameDetails(data){
 				console.log(data);
-				this.plain = this.searchresult[data].plain;
-				console.log(this.plain);
+				this.id = data;
 				uni.navigateTo({
-					url:`/pages/gameDetails/gameDetails?data=${this.plain}`,
+					url:`/pages/gameDetails/gameDetails?data=${this.id}`,
 					// success: function(res) {
 					//     res.eventChannel.emit('acceptDataFromOpenerPage', { data: this.appid })
 					//   }

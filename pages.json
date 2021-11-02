@@ -22,7 +22,10 @@
 			}
 		},
 		{
-			"path": "pages/gameDetails/gameDetails"
+			"path": "pages/gameDetails/gameDetails",
+			"style": {
+				"navigationBarTitleText": "GameStation-游戏详情"
+			}
 		}
 	],
 	"globalStyle": {
