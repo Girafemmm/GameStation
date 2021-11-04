@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<u-card class="specials" title="特别推荐" :sub-title="subTitle" foot-border-top="true" head-border-bottom="true">
-				<view v-for="(item,index) in specials" class="" slot="body">
+				<view v-for="(item,index) in specials" @click="gameDetails(item.id)" class="" slot="body">
 					<view class="specials-card">
 						<image class="specials-card-img" :src="item.large_capsule_image" mode="widthFix"></image>
 						<view class="specials-card-title">{{item.name}}</view>
@@ -26,6 +26,7 @@
 				title: 'Sales',
 				tabbar: '',
 				specials:'',
+				id:'',
 			}
 		},
 		onLoad() {
@@ -55,11 +56,17 @@
 					data[i].final_price = (data[i].final_price /100).toFixed(2);
 				}
 			},
-			// getCurrencySymble(data){
-			// 	if(data[0].currency = 'CNY'){
-			// 		data.currency = '￥'
-			// 	}
-			// }
+			gameDetails(data){
+				console.log(data);
+				this.id = data;
+				uni.navigateTo({
+					url:`/pages/gameDetails/gameDetails?data=${this.id}`,
+					// success: function(res) {
+					//     res.eventChannel.emit('acceptDataFromOpenerPage', { data: this.appid })
+					//   }
+				})
+				
+			}
 		}
 	}
 </script>
