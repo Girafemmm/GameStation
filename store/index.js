@@ -25,6 +25,7 @@ const store = new Vuex.Store({
 					pagePath: "/pages/dataAnalysis/dataAnalysis"
 				},
 			],
+		subinfo:'',
 	},
     mutations: {},
     actions: {}

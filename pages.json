@@ -26,6 +26,12 @@
 			"style": {
 				"navigationBarTitleText": "GameStation-游戏详情"
 			}
+		},
+		{
+			"path": "pages/subDetails/subDetails",
+			"style": {
+				"navigationBarTitleText": "GameStation-游戏详情"
+			}
 		}
 	],
 	"globalStyle": {

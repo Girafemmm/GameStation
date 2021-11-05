@@ -21,6 +21,8 @@
 		},
 		onLoad() {
 			this.tabbar = this.$store.state.tabbar
+		},
+		onShow(){
 			this.getdata();
 		},
 		methods: {

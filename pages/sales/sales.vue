@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<u-card class="specials" title="特别推荐" :sub-title="subTitle" foot-border-top="true" head-border-bottom="true">
-				<view v-for="(item,index) in specials" @click="gameDetails(item.id)" class="" slot="body">
+				<view v-for="(item,index) in specials" @click="gameDetails(item)" class="" slot="body">
 					<view class="specials-card">
 						<image class="specials-card-img" :src="item.large_capsule_image" mode="widthFix"></image>
 						<view class="specials-card-title">{{item.name}}</view>
@@ -37,9 +37,11 @@
 		methods: {
 			getdata(){
 				uni.request({
-					url:"https://store.steampowered.com/api/featuredcategories",
+					url:"https://store.steampowered.com/api/featuredcategories/?&cc=cn",
 					method:"GET",
 					success: (res) => {
+							console.log(res);
+							console.log(res.data.specials.items);
 							this.getPrice(res.data.specials.items);
 							// this.getCurrencySymble(res.data.specials);
 					        this.specials = res.data.specials.items;
@@ -58,14 +60,18 @@
 			},
 			gameDetails(data){
 				console.log(data);
-				this.id = data;
-				uni.navigateTo({
+				this.id = data.id;
+				if(data.type==0){
+					uni.navigateTo({
 					url:`/pages/gameDetails/gameDetails?data=${this.id}`,
-					// success: function(res) {
-					//     res.eventChannel.emit('acceptDataFromOpenerPage', { data: this.appid })
-					//   }
 				})
-				
+				}
+				if(data.type==1){
+					this.$store.state.subinfo = data
+					uni.navigateTo({
+					url:`/pages/subDetails/subDetails`,
+				})
+				}
 			}
 		}
 	}

@@ -8,7 +8,7 @@
 			<p>开发商：<u-tag style="margin-right: 5px;" v-for="(item,index) in gameinfo.developers" mode="light" shape="circle" type="info" size="mini" :text="item"></u-tag></p>
 			<p>发行商：<u-tag style="margin-right: 5px;" v-for="(item,index) in gameinfo.publishers" mode="light" shape="circle" type="info" size="mini" :text="item"></u-tag></p>
 			<p>{{gameinfo.short_description}}</p>
-			<u-tag class="gamedetails-header-body-tag" v-for="(item,index) in gameinfo.categories" :key="item.id" :text="item.description" mode="light" shape="circle" />
+			<u-tag class="gamedetails-header-body-tag" v-for="(item,index) in gameinfo.genres" :key="item.id" :text="item.description" mode="light" shape="circle" />
 			<u-line color="grey" />
 		</view>
 	</view>
