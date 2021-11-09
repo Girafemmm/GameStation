@@ -43,7 +43,7 @@
 
 <style>
 .steam-status{
-	width: 85%;
+	width: 95%;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 15px;

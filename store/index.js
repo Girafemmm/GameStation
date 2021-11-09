@@ -3,10 +3,18 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
-		tabbar:[{
-					iconPath: "/static/icon/tags-inactive.png",
-					selectedIconPath: "/static/icon/tags.png",
-					text: '今日折扣',
+		tabbar:[
+				{
+					iconPath: "/static/icon/international-inactive.png",
+					selectedIconPath: "/static/icon/international.png",
+					text: '首页',
+					// midButton: true,
+					pagePath: "/pages/index/index"
+				},
+				{
+					iconPath: "/static/icon/discount-inactive.png",
+					selectedIconPath: "/static/icon/discount.png",
+					text: '折扣推荐',
 					// midButton: true,
 					pagePath: "/pages/sales/sales"
 				},
@@ -26,6 +34,7 @@ const store = new Vuex.Store({
 				},
 			],
 		subinfo:'',
+		access_token:'e80b98380f4df62f2f561e77acaf140d',
 	},
     mutations: {},
     actions: {}

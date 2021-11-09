@@ -1,20 +1,23 @@
 <template>
 	<view class="content">
-		<u-card class="specials" title="特别推荐" :sub-title="subTitle" foot-border-top="true" head-border-bottom="true">
-				<view v-for="(item,index) in specials" @click="gameDetails(item)" class="" slot="body">
+		<!-- <u-card class="specials" title="特别推荐" :sub-title="subTitle" foot-border-top="true" head-border-bottom="true"> -->
+				<view v-for="(item,index) in specials" @click="gameDetails(item)" class="specials" slot="body">
 					<view class="specials-card">
 						<image class="specials-card-img" :src="item.large_capsule_image" mode="widthFix"></image>
 						<view class="specials-card-title">{{item.name}}</view>
+						<!-- <view class="specials-card-expiration">
+							<u-count-down :timestamp="item.discount_expiration" separator="zh"></u-count-down>
+						</view> -->
 						<view class="specials-card-discount">
 							<view class="specials-card-discount-percent">{{'-' + item.discount_percent + '%'}}</view>
 							<view class="specials-card-price">
-								<text class="specials-card-originprice">{{item.currency}}&nbsp;{{item.original_price}}</text>
-								<text class="specials-card-finalprice">{{item.currency}}&nbsp;{{item.final_price}}</text>
+								<text class="specials-card-originprice">￥&nbsp;{{item.original_price}}</text>
+								<text class="specials-card-finalprice">￥&nbsp;{{item.final_price}}</text>
 							</view>
 						</view>
 					</view>
 				</view>
-			</u-card>
+			<!-- </u-card> -->
 		<u-tabbar :list="tabbar" :mid-button="false"></u-tabbar>
 	</view>
 </template>
@@ -45,17 +48,26 @@
 							this.getPrice(res.data.specials.items);
 							// this.getCurrencySymble(res.data.specials);
 					        this.specials = res.data.specials.items;
+							// var time = new Date();
+							// console.log(res.data.specials.items.discount_expiration);
+							// console.log(time.getTime());
+							// this.specials.discount_expiration = res.data.specials.items.discount_expiration - time.getTime();
 					    }
 				})
 			},
 			getPrice(data){
 				console.log(data)
+				var time = new Date();
 				for(var i=0;i<data.length;i++){
 					// if(data[i].currency = 'CNY'){
 					// 	data[i].currency = '￥'
 					// }
 					data[i].original_price = (data[i].original_price /100).toFixed(2);
 					data[i].final_price = (data[i].final_price /100).toFixed(2);
+					// console.log(data[i].discount_expiration * 1000)
+					// console.log(time.getTime())
+					data[i].discount_expiration = (data[i].discount_expiration) - Math.round(new Date() / 1000);
+					// console.log(data[i].discount_expiration)
 				}
 			},
 			gameDetails(data){
@@ -84,10 +96,10 @@
 			align-items: center;
 			justify-content: center;
 			bottom: 10px;
-			background-color: #e6ebf4;
+			/* background-color: #e6ebf4; */
 		}
 	.specials{
-			width: 100%;
+			width: 93%;
 		}
 	.specials-card{
 		/* border-style: solid;

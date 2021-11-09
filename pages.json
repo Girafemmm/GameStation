@@ -4,9 +4,15 @@
 	},
 	"pages": [
 		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "GameStation-首页"
+			}
+		},
+		{
 			"path": "pages/sales/sales",
 			"style": {
-				"navigationBarTitleText": "GameStation-今日折扣"
+				"navigationBarTitleText": "GameStation-折扣推荐"
 			}
 		},
 		{
@@ -46,6 +52,8 @@
 	    "borderStyle": "black",
 	    "backgroundColor": "#ffffff",
 	    "list": [{
+	        "pagePath": "pages/index/index"
+	    },{
 	        "pagePath": "pages/sales/sales"
 	    }, {
 	        "pagePath": "pages/search/search"

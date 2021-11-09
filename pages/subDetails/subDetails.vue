@@ -5,16 +5,27 @@
 			<view class="subdetails-header-body">
 				<h2 style="font-size: 20px;font-weight: bold;">{{subinfo.name}}</h2>
 			</view>
-			<view>
-				<p>史低占位</p>
+			<view class="historylow-info">
+				<view><u-icon name="coupon"></u-icon>历史最低价</view>
+				<u-cell-group>
+					<u-cell-item :title="priceinfo.lowest.store" :label="priceinfo.lowest.recorded" :value="priceinfo.lowest.price_formatted" :arrow="false">
+					</u-cell-item>
+				</u-cell-group>
 			</view>
-			<view class="subdetails-discount">
+			<view class="currentprice-info">
+				<view><u-icon name="bag"></u-icon>Steam目前售价</view>
+				<u-cell-group>
+					<u-cell-item title="Steam" :value="'￥' + subinfo.final_price" :arrow="false">
+					</u-cell-item>
+				</u-cell-group>
+			</view>
+			<!-- <view class="subdetails-discount">
 				<view class="subdetails-discount-percent">{{'-' + subinfo.discount_percent + '%'}}</view>
 				<view class="subdetails-price">
 					<text class="subdetails-originprice">￥&nbsp;{{subinfo.original_price}}</text>
 					<text class="subdetails-finalprice">￥&nbsp;{{subinfo.final_price}}</text>
 				</view>
-			</view>
+			</view> -->
 		</view>
 	</view>
 </template>
@@ -44,9 +55,19 @@
 					        console.log(res);
 							console.log(res.data.data[`sub/${this.subinfo.id}`]);
 							this.priceinfo = res.data.data[`sub/${this.subinfo.id}`]
-							
+							console.log(this.priceinfo.lowest.recorded);
+							this.timeTransfer(this.priceinfo.lowest.recorded);
 					    }
 				})
+			},
+			timeTransfer(res){
+				var timestrap = res * 1000
+				var date = new Date(timestrap);
+				var Y = date.getFullYear() + '-';
+				var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+				var D = date.getDate();
+				this.priceinfo.lowest.recorded = Y+M+D
+				console.log(Y+M+D);
 			}
 		
 		}
@@ -104,5 +125,9 @@
 		font-weight: bold;
 		display: block;
 		text-align:right;
+	}
+	.historylow-info{
+		
+		margin: 5px 8px 10px 8px;
 	}
 </style>
