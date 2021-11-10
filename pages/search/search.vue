@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view>
+		<view class="search-bar">
 			<u-search @search="gameSearch()" @custom="gameSearch()" placeholder="请输入游戏名称" v-model="keyword" :show-action="true" action-text="搜索" :animation="true"></u-search>
 		</view>
 		<!-- <u-card v-for="(item,index) in searchresult" :key="item.appId" :title="item.title" @click="gameDetails(index)">
@@ -78,7 +78,10 @@
 
 <style>
 .content{
-	background-color: #dadada;
+	/* background-color: #e3e3e3; */
+	margin: auto;
+	width: 100%;
+	height: 100%;
 }
 .search-results{
 	
@@ -88,5 +91,8 @@
 	border-color: #bcbcbc; */
 	/* margin-bottom: 5px; */
 	/* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+}
+.search-bar{
+	padding: 10px 5px 10px 5px;
 }
 </style>

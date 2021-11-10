@@ -4,16 +4,15 @@
 				<view v-for="(item,index) in specials" @click="gameDetails(item)" class="specials" slot="body">
 					<view class="specials-card">
 						<image class="specials-card-img" :src="item.large_capsule_image" mode="widthFix"></image>
-						<view class="specials-card-title">{{item.name}}</view>
-						<!-- <view class="specials-card-expiration">
-							<u-count-down :timestamp="item.discount_expiration" separator="zh"></u-count-down>
-						</view> -->
-						<view class="specials-card-discount">
-							<view class="specials-card-discount-percent">{{'-' + item.discount_percent + '%'}}</view>
-							<view class="specials-card-price">
-								<text class="specials-card-originprice">￥&nbsp;{{item.original_price}}</text>
-								<text class="specials-card-finalprice">￥&nbsp;{{item.final_price}}</text>
-							</view>
+						<view>
+							<view class="specials-card-title">{{item.name}}</view>
+							<view class="specials-card-price-discounted" v-if="item.discounted">
+								<view class="specials-card-discounted">
+									-{{item.discount_percent}}%
+								</view>
+								￥{{item.final_price}}
+								</view>
+							<view class="specials-card-price" v-else>￥{{item.final_price}}</view>
 						</view>
 					</view>
 				</view>
@@ -118,38 +117,38 @@
 	}
 	.specials-card-title{
 		word-break: normal;
-		padding-left: 5px;
+		padding: 5px 0 38px 5px;
 		font-weight: bold;
-	}
-	.specials-card-discount{
-		
 	}
 	.specials-card-price{
-		display: inline-block;
+		border-radius: 15px;
+		background-color: #ebebeb;
+		color: #007AFF;
+		font-weight: bold;
+		float: right;
 		position: relative;
-		top: 5px;
-		padding-left: 5px;
-		text-align: center;
+		right: 15px;
+		bottom: 40px;
+		padding: 5px 8px 5px 8px;
 	}
-	.specials-card-discount-percent{
+	.specials-card-price-discounted{
+		border-radius: 15px;
+		background-color: #ebebeb;
+		color: #007AFF;
+		font-weight: bold;
+		float: right;
+		position: relative;
+		right: 15px;
+		bottom: 40px;
+		padding: 0 8px 0 0;
+	}
+	.specials-card-discounted{
 		display: inline-block;
+		border-radius: 15px;
+		padding: 5px 8px 5px 8px ;
+		margin-right: 3px;
 		background-color: #71C671;
 		color: white;
-		height: 100%;
-		font-size: 27px;
-		padding: 4px;
-		border-bottom-left-radius:15px;
-		border-top-right-radius:15px;
 	}
-	.specials-card-originprice{
-		color: #55575b;
-		display: block;
-		text-align:right;
-		text-decoration:line-through;
-	}
-	.specials-card-finalprice{
-		font-weight: bold;
-		display: block;
-		text-align:right;
-	}
+
 </style>

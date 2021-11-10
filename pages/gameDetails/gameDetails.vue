@@ -14,7 +14,8 @@
 					<u-grid-item>
 						<img src="/static/custom-icon/status.svg" class="m_img">
 						<view class="grid-text">在线人数</view>
-						<view class="grid-text">{{currentPlayer}}</view>
+						<view class="grid-text" v-if="currentPlayer">{{currentPlayer}}</view>
+						<view class="grid-text" v-else>暂无</view>
 					</u-grid-item>
 					<u-grid-item>
 						<img src="/static/custom-icon/logo-metacritic.svg" class="m_img">
@@ -100,7 +101,8 @@
 				var date = new Date(timestrap);
 				var Y = date.getFullYear() + '-';
 				var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-				var D = date.getDate();
+				// var M = date.getMonth() + '-';
+				var D = date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate();
 				this.priceinfo.lowest.recorded = Y+M+D
 				console.log(Y+M+D);
 			}

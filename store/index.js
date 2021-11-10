@@ -7,7 +7,7 @@ const store = new Vuex.Store({
 				{
 					iconPath: "/static/icon/international-inactive.png",
 					selectedIconPath: "/static/icon/international.png",
-					text: '首页',
+					text: '热销游戏',
 					// midButton: true,
 					pagePath: "/pages/index/index"
 				},
